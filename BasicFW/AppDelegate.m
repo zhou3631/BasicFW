@@ -10,7 +10,7 @@
 #import "MainTabBarController.h"
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<XHLaunchAdDelegate>
 
 @end
 
@@ -23,12 +23,43 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = main;
     [self.window makeKeyAndVisible];
-    //添加广告启动页
+    //广告页
+    [self Lanuch];
     
     
     return YES;
 }
+//广告页包含正常图片和gif
+- (void)Lanuch{
+    //1.使用默认配置初始化
+    //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
+    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
+    //配置广告数据
+    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
+    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+    imageAdconfiguration.imageNameOrURLString = @"guide1";
+    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
+    imageAdconfiguration.openModel = @"http://www.it7090.com";
+    //显示图片开屏广告
+    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
+    /*------------------------------------------------------**/
+    //2.自定义配置初始化
+    
+}
+/**
+ 点击广告图事件
+ */
+- (void)xhLaunchAd:(XHLaunchAd *)launchAd clickAndOpenURLString:(NSString *)openURLString
+{
+    NSLog(@"点击了");
+}
 
+/**
+ 广告加载完事件
+ */
+- (void)xhLaunchShowFinish:(XHLaunchAd *)launchAd{
+    NSLog(@"完成了。。。");
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

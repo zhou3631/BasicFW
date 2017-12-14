@@ -10,30 +10,11 @@
 #define API_h
 
 #import "Masonry.h"//约束
+#import "MBProgressHUD+YFHud.h"//提示
+#import "MBProgressHUD.h"
+#import "XHLaunchAd.h"//广告页
 
-/*
- 1 正式
- 0 测试服务器地址
- */
-#if 0
-#define Localhost @"https://mobile.hcjinfu.com"
 
-#else
-#define Localhost @"http://124.90.42.54:7000" //(测试服)
-
-#endif
-/**
- *  如果不需要log,把1改成0
- */
-#define  myTest  1
-#if myTest
-
-#define NSLog(FORMAT, ...) fprintf(stderr,"[%s:%d行] %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-
-#else
-
-#define NSLog(FORMAT, ...) nil
-#endif
 
 
 #endif /* API_h */

@@ -18,6 +18,7 @@
 		841B3B9C1FDA39940059E924 /* BasicFWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B3B9B1FDA39940059E924 /* BasicFWTests.m */; };
 		841B3BA71FDA39940059E924 /* BasicFWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B3BA61FDA39940059E924 /* BasicFWUITests.m */; };
 		844849C71FE0CE7000F19087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844849C61FE0CE7000F19087 /* Assets.xcassets */; };
+		8449B0101FE223CB002BDEA1 /* guide1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8449B00F1FE223CB002BDEA1 /* guide1@2x.png */; };
 		847BCCE31FDF6D67009A43A7 /* MBProgressHUD+YFHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */; };
 		847BCCE41FDF6D67009A43A7 /* UIBarButtonItem+YFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCE11FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.m */; };
 		847BCCEE1FDFB61D009A43A7 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCED1FDFB61D009A43A7 /* HomeVC.m */; };
@@ -83,6 +84,7 @@
 		841B3BA61FDA39940059E924 /* BasicFWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicFWUITests.m; sourceTree = "<group>"; };
 		841B3BA81FDA39940059E924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844849C61FE0CE7000F19087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8449B00F1FE223CB002BDEA1 /* guide1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide1@2x.png"; sourceTree = "<group>"; };
 		847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+YFHud.m"; sourceTree = "<group>"; };
 		847BCCE01FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YFExtension.h"; sourceTree = "<group>"; };
 		847BCCE11FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YFExtension.m"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		8414E8581FDE64CE0026D3AD /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				8449B00B1FE219B8002BDEA1 /* Image */,
 				847BCCDE1FDF6D36009A43A7 /* CateGory */,
 				8414E8591FDE71460026D3AD /* TabBar */,
 			);
@@ -251,6 +254,30 @@
 				841B3BA81FDA39940059E924 /* Info.plist */,
 			);
 			path = BasicFWUITests;
+			sourceTree = "<group>";
+		};
+		8449B00B1FE219B8002BDEA1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8449B00E1FE21AC6002BDEA1 /* Other */,
+				8449B00F1FE223CB002BDEA1 /* guide1@2x.png */,
+				8449B00C1FE219FB002BDEA1 /* Home */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		8449B00C1FE219FB002BDEA1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8449B00E1FE21AC6002BDEA1 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		847BCCDE1FDF6D36009A43A7 /* CateGory */ = {
@@ -634,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				841B3B8F1FDA39940059E924 /* LaunchScreen.storyboard in Resources */,
+				8449B0101FE223CB002BDEA1 /* guide1@2x.png in Resources */,
 				844849C71FE0CE7000F19087 /* Assets.xcassets in Resources */,
 				841B3B8A1FDA39940059E924 /* Main.storyboard in Resources */,
 			);
