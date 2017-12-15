@@ -13,6 +13,7 @@
 #import "MBProgressHUD+YFHud.h"//提示
 #import "MBProgressHUD.h"
 #import "XHLaunchAd.h"//广告页
+#import "AppDelegate.h"
 
 
 

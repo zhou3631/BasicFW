@@ -34,6 +34,7 @@
 		847BCD301FDFD41A009A43A7 /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCD2F1FDFD41A009A43A7 /* MoreView.m */; };
 		84B731BE1FE3B2F60081BDC7 /* guide1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B731BD1FE3B2F60081BDC7 /* guide1@2x.png */; };
 		84B731C21FE3C1A20081BDC7 /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B731C11FE3C1A20081BDC7 /* NullSafe.m */; };
+		84B731C51FE3D2770081BDC7 /* GuidePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B731C41FE3D2770081BDC7 /* GuidePageVC.m */; };
 		8E712465591C955797CF9265 /* libPods-BasicFWUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8914F6BB07006F33FAA4986 /* libPods-BasicFWUITests.a */; };
 		C31F0B7839E93EA0B029B11A /* libPods-BasicFW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC95B04AEF6737470A4CBAD5 /* libPods-BasicFW.a */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,8 @@
 		847BCD2F1FDFD41A009A43A7 /* MoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreView.m; sourceTree = "<group>"; };
 		84B731BD1FE3B2F60081BDC7 /* guide1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide1@2x.png"; sourceTree = "<group>"; };
 		84B731C11FE3C1A20081BDC7 /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
+		84B731C31FE3D2770081BDC7 /* GuidePageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidePageVC.h; sourceTree = "<group>"; };
+		84B731C41FE3D2770081BDC7 /* GuidePageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidePageVC.m; sourceTree = "<group>"; };
 		D273014856BF88E8C5B9ABB2 /* Pods-BasicFWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicFWUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasicFWUITests/Pods-BasicFWUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC95B04AEF6737470A4CBAD5 /* libPods-BasicFW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BasicFW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CF3F59097F08A03A24FA99 /* Pods-BasicFW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicFW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasicFW/Pods-BasicFW.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 			children = (
 				841B3B821FDA39940059E924 /* AppDelegate.h */,
 				841B3B831FDA39940059E924 /* AppDelegate.m */,
+				84B731C31FE3D2770081BDC7 /* GuidePageVC.h */,
+				84B731C41FE3D2770081BDC7 /* GuidePageVC.m */,
 				841B3B851FDA39940059E924 /* ViewController.h */,
 				841B3B861FDA39940059E924 /* ViewController.m */,
 				841B3B881FDA39940059E924 /* Main.storyboard */,
@@ -875,6 +880,7 @@
 				841B3B921FDA39940059E924 /* main.m in Sources */,
 				847BCD141FDFD2D1009A43A7 /* PersonalVC.m in Sources */,
 				847BCD061FDFCFB6009A43A7 /* ItemModel.m in Sources */,
+				84B731C51FE3D2770081BDC7 /* GuidePageVC.m in Sources */,
 				847BCD1A1FDFD2F6009A43A7 /* PersonalView.m in Sources */,
 				847BCCEE1FDFB61D009A43A7 /* HomeVC.m in Sources */,
 				847BCD171FDFD2E6009A43A7 /* PersonalModel.m in Sources */,

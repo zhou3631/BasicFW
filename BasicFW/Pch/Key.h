@@ -16,5 +16,7 @@
 #define defaults [NSUserDefaults standardUserDefaults]
 //block里面的引用
 #define Weakify(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+//引导页的张数
+#define GuideCount 4
 
 #endif /* Key_h */
