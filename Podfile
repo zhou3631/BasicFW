@@ -8,7 +8,9 @@ target 'BasicFW' do
   # Pods for BasicFW
 pod 'Masonry', '~> 1.1.0'
 pod 'MBProgressHUD', '~> 1.1.0'
-pod 'XHLaunchAd', '~> 3.9.1'
+pod 'XHLaunchAd', '~> 3.9.1'#广告页
+pod 'AFNetworking', '~> 3.1.0'
+
 
   target 'BasicFWTests' do
     inherit! :search_paths

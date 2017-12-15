@@ -32,19 +32,51 @@
 //广告页包含正常图片和gif
 - (void)Lanuch{
     //1.使用默认配置初始化
-    //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
-    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
-    //配置广告数据
-    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
-    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
-    imageAdconfiguration.imageNameOrURLString = @"guide1";
-    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
-    imageAdconfiguration.openModel = @"http://www.it7090.com";
-    //显示图片开屏广告
-    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
+//    //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
+//    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
+//    //配置广告数据
+//    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
+//    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+//    imageAdconfiguration.imageNameOrURLString = @"guide1";
+//    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
+//    imageAdconfiguration.openModel = @"http://www.it7090.com";
+//    //显示图片开屏广告
+//    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
     /*------------------------------------------------------**/
     //2.自定义配置初始化
+    //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
+    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
     
+    //配置广告数据
+    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration new];
+    //广告停留时间
+    imageAdconfiguration.duration = 5;
+    //广告frame
+    imageAdconfiguration.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-150);
+    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+    imageAdconfiguration.imageNameOrURLString = @"guide1@2x.png";
+    //设置GIF动图是否只循环播放一次(仅对动图设置有效)
+    imageAdconfiguration.GIFImageCycleOnce = NO;
+    //网络图片缓存机制(只对网络图片有效)
+    imageAdconfiguration.imageOption = XHLaunchAdImageRefreshCached;
+    //图片填充模式
+    imageAdconfiguration.contentMode = UIViewContentModeScaleToFill;
+    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
+    imageAdconfiguration.openModel = @"http://www.it7090.com";
+    //广告显示完成动画
+    imageAdconfiguration.showFinishAnimate =ShowFinishAnimateFadein;
+    //广告显示完成动画时间
+    imageAdconfiguration.showFinishAnimateTime = 0.8;
+    //跳过按钮类型
+    imageAdconfiguration.skipButtonType = SkipTypeTimeText;
+    //后台返回时,是否显示广告
+    imageAdconfiguration.showEnterForeground = NO;
+    
+    //设置要添加的子视图(可选)
+    //imageAdconfiguration.subViews = ...
+    
+    //显示图片开屏广告
+    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
 }
 /**
  点击广告图事件
