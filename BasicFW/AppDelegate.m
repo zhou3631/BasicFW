@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "MainTabBarController.h"
+#import "GuidePageVC.h"
 
 
 @interface AppDelegate ()<XHLaunchAdDelegate>
+@property (nonatomic, strong) MainTabBarController *mainTabVC;//主控制器
 
 @end
 
@@ -19,15 +21,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //添加主控制器
-    MainTabBarController *main = [[MainTabBarController alloc]init];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = main;
+    _mainTabVC = [[MainTabBarController alloc]init];
+    self.window.backgroundColor = BackGroundColor;
     [self.window makeKeyAndVisible];
+//    判断是否第一次进入app
+    if ([defaults objectForKey:@"firstLogin"]) {
+        self.window.rootViewController = _mainTabVC;
+    }else {
+        GuidePageVC *guideVC = [[GuidePageVC alloc] init];
+        self.window.rootViewController = guideVC;
+    }
     //广告页
     [self Lanuch];
     
-    
     return YES;
+}
+/**
+ *  引导页到主页
+ */
+- (void)qieHuan {
+    self.window.rootViewController = _mainTabVC;
+    UserDefaults(@"YES", @"firstLogin");
 }
 //广告页包含正常图片和gif
 - (void)Lanuch{
@@ -72,26 +87,47 @@
     //后台返回时,是否显示广告
     imageAdconfiguration.showEnterForeground = NO;
     
+//    [XHLaunchAd setWaitDataDuration:3];//请求广告URL前,必须设置,否则会先进入window的RootVC
+    
     //设置要添加的子视图(可选)
     //imageAdconfiguration.subViews = ...
-    
-    //显示图片开屏广告
+    //服务器请求的弹屏图片
+//    [DownLoadData postActivityScreen:^(id obj, NSError *error) {
+//        if(error){
+//
+//        }else{
+//            NSString *picturePath = [NSString stringWithFormat:@"%@", obj[@"picturePath"]];
+//            if (picturePath == nil || [picturePath isEqualToString:@""]) {
+//
+//
+//            }else {
+//                [defaults setObject:obj[@"pictureName"] forKey:@"pictureName"];
+//                [defaults setObject:obj[@"pictureUrl"] forKey:@"pictureUrl"];
+//                //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+//                imageAdconfiguration.imageNameOrURLString = obj[@"picturePath"];
+//                //广告点击打开链接
+//                imageAdconfiguration.openURLString = obj[@"pictureUrl"];
+//                //显示图片开屏广告
+//                [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
+//            }
+//        }
+//    }];
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
 }
 /**
  点击广告图事件
  */
-- (void)xhLaunchAd:(XHLaunchAd *)launchAd clickAndOpenURLString:(NSString *)openURLString
-{
+- (void)xhLaunchAd:(XHLaunchAd *)launchAd clickAndOpenModel:(id)openModel clickPoint:(CGPoint)clickPoint{
     NSLog(@"点击了");
 }
-
 /**
  广告加载完事件
  */
-- (void)xhLaunchShowFinish:(XHLaunchAd *)launchAd{
+- (void)xhLaunchAdShowFinish:(XHLaunchAd *)launchAd{
     NSLog(@"完成了。。。");
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

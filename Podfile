@@ -10,6 +10,10 @@ pod 'Masonry', '~> 1.1.0'
 pod 'MBProgressHUD', '~> 1.1.0'
 pod 'XHLaunchAd', '~> 3.9.1'#广告页
 pod 'AFNetworking', '~> 3.1.0'
+pod 'SDWebImage', '~> 4.2.2'
+pod 'SDWebImage/GIF'   #SDWebImage4.0以后的版本gif依赖了FLAnimatedImage
+pod 'SDCycleScrollView', '~> 1.75'#轮播图
+
 
 
   target 'BasicFWTests' do

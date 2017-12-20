@@ -14,6 +14,7 @@
 #import "MBProgressHUD.h"
 #import "XHLaunchAd.h"//广告页
 #import "AppDelegate.h"
+#import <SDCycleScrollView/SDCycleScrollView.h>//轮播
 
 
 

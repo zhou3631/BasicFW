@@ -9,6 +9,9 @@
 #import "HomeVC.h"
 
 @interface HomeVC ()
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) SDCycleScrollView *cycleScrollView;//轮播图
+
 
 @end
 
