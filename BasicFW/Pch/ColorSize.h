@@ -29,6 +29,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define GrayColor RGB(153, 153, 153)
 //tabbar字体颜色
 #define K_TitleColor RGB(51, 51, 51)
+/**
+ *  导航栏颜色
+ */
+#define navigationColor RGBA(0, 175, 240,1.0)
 
 
 
@@ -47,6 +51,13 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define K_TitleSmallFont 26
 #define K_EightFont 28
 #define K_TitleBigFont 30
+//导航相关的高度设置
+#define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
+#define NAV_HEIGHT 64
+#define IMAGE_HEIGHT 260
+#define SCROLL_DOWN_LIMIT 70
+#define LIMIT_OFFSET_Y -(IMAGE_HEIGHT + SCROLL_DOWN_LIMIT)
+
 /**
  *  屏幕尺寸宽和高
  */
