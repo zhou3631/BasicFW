@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		13C788336064B11BF87304A2 /* libPods-BasicFWTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E470052F4730598DC5320B6 /* libPods-BasicFWTests.a */; };
+		840E23381FEB8A8F002CD7B0 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E23371FEB8A8F002CD7B0 /* TestVC.m */; };
+		840E233D1FEB8DF7002CD7B0 /* FatherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E233C1FEB8DF7002CD7B0 /* FatherVC.m */; };
+		840E23401FEB98EF002CD7B0 /* UIView+HRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E233F1FEB98EF002CD7B0 /* UIView+HRExtention.m */; };
+		840E23431FEBB68E002CD7B0 /* HeaderImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E23421FEBB68E002CD7B0 /* HeaderImageVC.m */; };
 		8414E85E1FDE71EC0026D3AD /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8414E85C1FDE71EC0026D3AD /* BaseNavigationController.m */; };
 		8414E85F1FDE71EC0026D3AD /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8414E85D1FDE71EC0026D3AD /* MainTabBarController.m */; };
 		841B3B841FDA39940059E924 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B3B831FDA39940059E924 /* AppDelegate.m */; };
@@ -26,6 +30,7 @@
 		8445D5481FE8A7610031D59F /* guide2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8445D5441FE8A7610031D59F /* guide2@2x.png */; };
 		8445D5491FE8A7610031D59F /* guide4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8445D5451FE8A7610031D59F /* guide4@2x.png */; };
 		844849C71FE0CE7000F19087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844849C61FE0CE7000F19087 /* Assets.xcassets */; };
+		846B62671FECD7A600826FA9 /* UpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B62661FECD7A600826FA9 /* UpdateApp.m */; };
 		847BCCE31FDF6D67009A43A7 /* MBProgressHUD+YFHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */; };
 		847BCCE41FDF6D67009A43A7 /* UIBarButtonItem+YFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCE11FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.m */; };
 		847BCCEE1FDFB61D009A43A7 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCED1FDFB61D009A43A7 /* HomeVC.m */; };
@@ -69,6 +74,14 @@
 		2D9ABF3837AA1031C0D3CF17 /* Pods-BasicFWTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicFWTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasicFWTests/Pods-BasicFWTests.release.xcconfig"; sourceTree = "<group>"; };
 		3047C9BFCAD432D953F0FD43 /* Pods-BasicFWTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicFWTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasicFWTests/Pods-BasicFWTests.debug.xcconfig"; sourceTree = "<group>"; };
 		645650A614DFCC22CD70DBBE /* Pods-BasicFWUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicFWUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasicFWUITests/Pods-BasicFWUITests.release.xcconfig"; sourceTree = "<group>"; };
+		840E23361FEB8A8F002CD7B0 /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		840E23371FEB8A8F002CD7B0 /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		840E233B1FEB8DF7002CD7B0 /* FatherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FatherVC.h; sourceTree = "<group>"; };
+		840E233C1FEB8DF7002CD7B0 /* FatherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FatherVC.m; sourceTree = "<group>"; };
+		840E233E1FEB98EF002CD7B0 /* UIView+HRExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HRExtention.h"; sourceTree = "<group>"; };
+		840E233F1FEB98EF002CD7B0 /* UIView+HRExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HRExtention.m"; sourceTree = "<group>"; };
+		840E23411FEBB68E002CD7B0 /* HeaderImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderImageVC.h; sourceTree = "<group>"; };
+		840E23421FEBB68E002CD7B0 /* HeaderImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderImageVC.m; sourceTree = "<group>"; };
 		8414E8541FDE22520026D3AD /* Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.pch; sourceTree = "<group>"; };
 		8414E8551FDE23950026D3AD /* ColorSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorSize.h; sourceTree = "<group>"; };
 		8414E8561FDE23B10026D3AD /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
@@ -104,6 +117,8 @@
 		8445D5441FE8A7610031D59F /* guide2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide2@2x.png"; sourceTree = "<group>"; };
 		8445D5451FE8A7610031D59F /* guide4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide4@2x.png"; sourceTree = "<group>"; };
 		844849C61FE0CE7000F19087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		846B62651FECD7A600826FA9 /* UpdateApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateApp.h; sourceTree = "<group>"; };
+		846B62661FECD7A600826FA9 /* UpdateApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateApp.m; sourceTree = "<group>"; };
 		847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+YFHud.m"; sourceTree = "<group>"; };
 		847BCCE01FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YFExtension.h"; sourceTree = "<group>"; };
 		847BCCE11FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YFExtension.m"; sourceTree = "<group>"; };
@@ -182,6 +197,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		840E23391FEB8DED002CD7B0 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				846B62641FECD71F00826FA9 /* UpdateApp */,
+				840E233A1FEB8DF7002CD7B0 /* FatherVC */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		840E233A1FEB8DF7002CD7B0 /* FatherVC */ = {
+			isa = PBXGroup;
+			children = (
+				840E233B1FEB8DF7002CD7B0 /* FatherVC.h */,
+				840E233C1FEB8DF7002CD7B0 /* FatherVC.m */,
+			);
+			path = FatherVC;
+			sourceTree = "<group>";
+		};
 		8414E8531FDE221C0026D3AD /* Pch */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +230,7 @@
 		8414E8581FDE64CE0026D3AD /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				840E23391FEB8DED002CD7B0 /* Class */,
 				841E3B961FEA0D82000621C0 /* NavBar */,
 				84B731BF1FE3C1970081BDC7 /* Other */,
 				8449B00B1FE219B8002BDEA1 /* Image */,
@@ -347,9 +381,20 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		846B62641FECD71F00826FA9 /* UpdateApp */ = {
+			isa = PBXGroup;
+			children = (
+				846B62651FECD7A600826FA9 /* UpdateApp.h */,
+				846B62661FECD7A600826FA9 /* UpdateApp.m */,
+			);
+			path = UpdateApp;
+			sourceTree = "<group>";
+		};
 		847BCCDE1FDF6D36009A43A7 /* CateGory */ = {
 			isa = PBXGroup;
 			children = (
+				840E233E1FEB98EF002CD7B0 /* UIView+HRExtention.h */,
+				840E233F1FEB98EF002CD7B0 /* UIView+HRExtention.m */,
 				847BCCE21FDF6D67009A43A7 /* MBProgressHUD+YFHud.h */,
 				847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */,
 				847BCCE01FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.h */,
@@ -458,6 +503,8 @@
 			children = (
 				847BCD001FDFCF95009A43A7 /* ItemListVC.h */,
 				847BCD011FDFCF95009A43A7 /* ItemListVC.m */,
+				840E23361FEB8A8F002CD7B0 /* TestVC.h */,
+				840E23371FEB8A8F002CD7B0 /* TestVC.m */,
 			);
 			path = ItemList;
 			sourceTree = "<group>";
@@ -519,6 +566,8 @@
 			children = (
 				847BCD121FDFD2D1009A43A7 /* PersonalVC.h */,
 				847BCD131FDFD2D1009A43A7 /* PersonalVC.m */,
+				840E23411FEBB68E002CD7B0 /* HeaderImageVC.h */,
+				840E23421FEBB68E002CD7B0 /* HeaderImageVC.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -923,6 +972,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847BCD281FDFD3DF009A43A7 /* MoreVC.m in Sources */,
+				846B62671FECD7A600826FA9 /* UpdateApp.m in Sources */,
 				8414E85E1FDE71EC0026D3AD /* BaseNavigationController.m in Sources */,
 				847BCD2C1FDFD3F9009A43A7 /* MoreModel.m in Sources */,
 				847BCD021FDFCF95009A43A7 /* ItemListVC.m in Sources */,
@@ -932,14 +982,18 @@
 				8414E85F1FDE71EC0026D3AD /* MainTabBarController.m in Sources */,
 				84B731C21FE3C1A20081BDC7 /* NullSafe.m in Sources */,
 				841B3B871FDA39940059E924 /* ViewController.m in Sources */,
+				840E233D1FEB8DF7002CD7B0 /* FatherVC.m in Sources */,
 				841B3B921FDA39940059E924 /* main.m in Sources */,
 				841E3BA11FEA0DBD000621C0 /* WRCustomNavigationBar.m in Sources */,
 				847BCD141FDFD2D1009A43A7 /* PersonalVC.m in Sources */,
+				840E23381FEB8A8F002CD7B0 /* TestVC.m in Sources */,
 				847BCD061FDFCFB6009A43A7 /* ItemModel.m in Sources */,
 				84B731C51FE3D2770081BDC7 /* GuidePageVC.m in Sources */,
 				847BCD1A1FDFD2F6009A43A7 /* PersonalView.m in Sources */,
 				841E3BA01FEA0DBD000621C0 /* WRNavigationBar.m in Sources */,
+				840E23431FEBB68E002CD7B0 /* HeaderImageVC.m in Sources */,
 				847BCCEE1FDFB61D009A43A7 /* HomeVC.m in Sources */,
+				840E23401FEB98EF002CD7B0 /* UIView+HRExtention.m in Sources */,
 				847BCD171FDFD2E6009A43A7 /* PersonalModel.m in Sources */,
 				847BCD0A1FDFCFD6009A43A7 /* ItemView.m in Sources */,
 				847BCCE31FDF6D67009A43A7 /* MBProgressHUD+YFHud.m in Sources */,

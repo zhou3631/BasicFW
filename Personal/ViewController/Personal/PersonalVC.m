@@ -7,18 +7,58 @@
 //
 
 #import "PersonalVC.h"
+#import "HeaderImageVC.h"
 
-@interface PersonalVC ()
+@interface PersonalVC ()<UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) UITableView *tableView;
+
 
 @end
+
+static NSString *cellStr = @"FW";
 
 @implementation PersonalVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = BackGroundColor;
+    [self.view addSubview:self.tableView];
     
 }
+#pragma mark -tableView
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        _tableView.estimatedRowHeight = 0;
+    }
+    return _tableView;
+}
+#pragma mark -numberOfRowsInSection
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+}
+#pragma mark -cellForRowAtIndexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellStr];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
+    }
+    NSArray *array = @[@"头像处理",@"版本检测",@"缓存处理"];
+    cell.textLabel.text = array[indexPath.row];
+    return cell;
+}
+#pragma mark -didSelectRowAtIndexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    HeaderImageVC *headerVC = [HeaderImageVC new];
+    headerVC.typeTag = indexPath.row;
+    [self.navigationController pushViewController:headerVC animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -16,6 +16,8 @@
 #import "AppDelegate.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>//轮播
 #import "WRNavigationBar.h"//导航渐变
+#import "UIView+HRExtention.h"
+
 
 
 

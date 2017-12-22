@@ -33,6 +33,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
  *  导航栏颜色
  */
 #define navigationColor RGBA(0, 175, 240,1.0)
+//导航上分段选择颜色
+#define SegmentColor RGBA(253, 182, 21,1.0)
 
 
 
