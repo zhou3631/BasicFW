@@ -12,6 +12,9 @@
 		840E233D1FEB8DF7002CD7B0 /* FatherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E233C1FEB8DF7002CD7B0 /* FatherVC.m */; };
 		840E23401FEB98EF002CD7B0 /* UIView+HRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E233F1FEB98EF002CD7B0 /* UIView+HRExtention.m */; };
 		840E23431FEBB68E002CD7B0 /* HeaderImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E23421FEBB68E002CD7B0 /* HeaderImageVC.m */; };
+		840F579D1FF0A57200A0AC85 /* ActivityCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F579C1FF0A57200A0AC85 /* ActivityCenterVC.m */; };
+		840F57A11FF0E07800A0AC85 /* TitleLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F57A01FF0E07800A0AC85 /* TitleLabelStyle.m */; };
+		840F57A51FF0FBA000A0AC85 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F57A41FF0FBA000A0AC85 /* Factory.m */; };
 		8414E85E1FDE71EC0026D3AD /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8414E85C1FDE71EC0026D3AD /* BaseNavigationController.m */; };
 		8414E85F1FDE71EC0026D3AD /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8414E85D1FDE71EC0026D3AD /* MainTabBarController.m */; };
 		841B3B841FDA39940059E924 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B3B831FDA39940059E924 /* AppDelegate.m */; };
@@ -82,6 +85,12 @@
 		840E233F1FEB98EF002CD7B0 /* UIView+HRExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HRExtention.m"; sourceTree = "<group>"; };
 		840E23411FEBB68E002CD7B0 /* HeaderImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderImageVC.h; sourceTree = "<group>"; };
 		840E23421FEBB68E002CD7B0 /* HeaderImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderImageVC.m; sourceTree = "<group>"; };
+		840F579B1FF0A57200A0AC85 /* ActivityCenterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCenterVC.h; sourceTree = "<group>"; };
+		840F579C1FF0A57200A0AC85 /* ActivityCenterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCenterVC.m; sourceTree = "<group>"; };
+		840F579F1FF0E07800A0AC85 /* TitleLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleLabelStyle.h; sourceTree = "<group>"; };
+		840F57A01FF0E07800A0AC85 /* TitleLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleLabelStyle.m; sourceTree = "<group>"; };
+		840F57A31FF0FBA000A0AC85 /* Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		840F57A41FF0FBA000A0AC85 /* Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
 		8414E8541FDE22520026D3AD /* Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.pch; sourceTree = "<group>"; };
 		8414E8551FDE23950026D3AD /* ColorSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorSize.h; sourceTree = "<group>"; };
 		8414E8561FDE23B10026D3AD /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
@@ -200,6 +209,8 @@
 		840E23391FEB8DED002CD7B0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				840F57A21FF0FB8900A0AC85 /* Factory */,
+				840F579E1FF0E05D00A0AC85 /* TitleLabel */,
 				846B62641FECD71F00826FA9 /* UpdateApp */,
 				840E233A1FEB8DF7002CD7B0 /* FatherVC */,
 			);
@@ -213,6 +224,33 @@
 				840E233C1FEB8DF7002CD7B0 /* FatherVC.m */,
 			);
 			path = FatherVC;
+			sourceTree = "<group>";
+		};
+		840F579A1FF0A49C00A0AC85 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				840F579B1FF0A57200A0AC85 /* ActivityCenterVC.h */,
+				840F579C1FF0A57200A0AC85 /* ActivityCenterVC.m */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		840F579E1FF0E05D00A0AC85 /* TitleLabel */ = {
+			isa = PBXGroup;
+			children = (
+				840F579F1FF0E07800A0AC85 /* TitleLabelStyle.h */,
+				840F57A01FF0E07800A0AC85 /* TitleLabelStyle.m */,
+			);
+			path = TitleLabel;
+			sourceTree = "<group>";
+		};
+		840F57A21FF0FB8900A0AC85 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				840F57A31FF0FBA000A0AC85 /* Factory.h */,
+				840F57A41FF0FBA000A0AC85 /* Factory.m */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		8414E8531FDE221C0026D3AD /* Pch */ = {
@@ -603,6 +641,7 @@
 		847BCD1C1FDFD365009A43A7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				840F579A1FF0A49C00A0AC85 /* Activity */,
 				847BCD251FDFD3CC009A43A7 /* More */,
 			);
 			path = ViewController;
@@ -978,6 +1017,7 @@
 				847BCD021FDFCF95009A43A7 /* ItemListVC.m in Sources */,
 				847BCD301FDFD41A009A43A7 /* MoreView.m in Sources */,
 				847BCCE41FDF6D67009A43A7 /* UIBarButtonItem+YFExtension.m in Sources */,
+				840F57A11FF0E07800A0AC85 /* TitleLabelStyle.m in Sources */,
 				841E3B9F1FEA0DBD000621C0 /* WRImageHelper.m in Sources */,
 				8414E85F1FDE71EC0026D3AD /* MainTabBarController.m in Sources */,
 				84B731C21FE3C1A20081BDC7 /* NullSafe.m in Sources */,
@@ -989,6 +1029,7 @@
 				840E23381FEB8A8F002CD7B0 /* TestVC.m in Sources */,
 				847BCD061FDFCFB6009A43A7 /* ItemModel.m in Sources */,
 				84B731C51FE3D2770081BDC7 /* GuidePageVC.m in Sources */,
+				840F579D1FF0A57200A0AC85 /* ActivityCenterVC.m in Sources */,
 				847BCD1A1FDFD2F6009A43A7 /* PersonalView.m in Sources */,
 				841E3BA01FEA0DBD000621C0 /* WRNavigationBar.m in Sources */,
 				840E23431FEBB68E002CD7B0 /* HeaderImageVC.m in Sources */,
@@ -997,6 +1038,7 @@
 				847BCD171FDFD2E6009A43A7 /* PersonalModel.m in Sources */,
 				847BCD0A1FDFCFD6009A43A7 /* ItemView.m in Sources */,
 				847BCCE31FDF6D67009A43A7 /* MBProgressHUD+YFHud.m in Sources */,
+				840F57A51FF0FBA000A0AC85 /* Factory.m in Sources */,
 				847BCCF61FDFB65A009A43A7 /* HomeView.m in Sources */,
 				841B3B841FDA39940059E924 /* AppDelegate.m in Sources */,
 				847BCCF21FDFB639009A43A7 /* HomeModel.m in Sources */,

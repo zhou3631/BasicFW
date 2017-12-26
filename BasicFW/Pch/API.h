@@ -10,13 +10,20 @@
 #define API_h
 
 #import "Masonry.h"//约束
-#import "MBProgressHUD+YFHud.h"//提示
-#import "MBProgressHUD.h"
+#import "Factory.h"
 #import "XHLaunchAd.h"//广告页
 #import "AppDelegate.h"
-#import <SDCycleScrollView/SDCycleScrollView.h>//轮播
+#import "MBProgressHUD.h"
+#import "TitleLabelStyle.h"//导航上字体的颜色
 #import "WRNavigationBar.h"//导航渐变
 #import "UIView+HRExtention.h"
+#import "MBProgressHUD+YFHud.h"//提示
+#import <SDCycleScrollView/SDCycleScrollView.h>//轮播
+
+
+
+
+
 
 
 
