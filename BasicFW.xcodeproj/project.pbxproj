@@ -33,6 +33,8 @@
 		8445D5481FE8A7610031D59F /* guide2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8445D5441FE8A7610031D59F /* guide2@2x.png */; };
 		8445D5491FE8A7610031D59F /* guide4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8445D5451FE8A7610031D59F /* guide4@2x.png */; };
 		844849C71FE0CE7000F19087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844849C61FE0CE7000F19087 /* Assets.xcassets */; };
+		844940FE1FF2354300596F37 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844940FD1FF2354300596F37 /* JavaScriptCore.framework */; };
+		844941011FF238CB00596F37 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844941001FF238CB00596F37 /* WKWebViewVC.m */; };
 		846B62671FECD7A600826FA9 /* UpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B62661FECD7A600826FA9 /* UpdateApp.m */; };
 		847BCCE31FDF6D67009A43A7 /* MBProgressHUD+YFHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */; };
 		847BCCE41FDF6D67009A43A7 /* UIBarButtonItem+YFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCE11FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.m */; };
@@ -126,6 +128,9 @@
 		8445D5441FE8A7610031D59F /* guide2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide2@2x.png"; sourceTree = "<group>"; };
 		8445D5451FE8A7610031D59F /* guide4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide4@2x.png"; sourceTree = "<group>"; };
 		844849C61FE0CE7000F19087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		844940FD1FF2354300596F37 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		844940FF1FF238CB00596F37 /* WKWebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewVC.h; sourceTree = "<group>"; };
+		844941001FF238CB00596F37 /* WKWebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewVC.m; sourceTree = "<group>"; };
 		846B62651FECD7A600826FA9 /* UpdateApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateApp.h; sourceTree = "<group>"; };
 		846B62661FECD7A600826FA9 /* UpdateApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateApp.m; sourceTree = "<group>"; };
 		847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+YFHud.m"; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844940FE1FF2354300596F37 /* JavaScriptCore.framework in Frameworks */,
 				C31F0B7839E93EA0B029B11A /* libPods-BasicFW.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +237,8 @@
 			children = (
 				840F579B1FF0A57200A0AC85 /* ActivityCenterVC.h */,
 				840F579C1FF0A57200A0AC85 /* ActivityCenterVC.m */,
+				844940FF1FF238CB00596F37 /* WKWebViewVC.h */,
+				844941001FF238CB00596F37 /* WKWebViewVC.m */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -709,6 +717,7 @@
 		CD97D53D3E97A7AE893DD37C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				844940FD1FF2354300596F37 /* JavaScriptCore.framework */,
 				DC95B04AEF6737470A4CBAD5 /* libPods-BasicFW.a */,
 				1E470052F4730598DC5320B6 /* libPods-BasicFWTests.a */,
 				E8914F6BB07006F33FAA4986 /* libPods-BasicFWUITests.a */,
@@ -1017,6 +1026,7 @@
 				847BCD021FDFCF95009A43A7 /* ItemListVC.m in Sources */,
 				847BCD301FDFD41A009A43A7 /* MoreView.m in Sources */,
 				847BCCE41FDF6D67009A43A7 /* UIBarButtonItem+YFExtension.m in Sources */,
+				844941011FF238CB00596F37 /* WKWebViewVC.m in Sources */,
 				840F57A11FF0E07800A0AC85 /* TitleLabelStyle.m in Sources */,
 				841E3B9F1FEA0DBD000621C0 /* WRImageHelper.m in Sources */,
 				8414E85F1FDE71EC0026D3AD /* MainTabBarController.m in Sources */,

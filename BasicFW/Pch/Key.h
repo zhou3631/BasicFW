@@ -18,5 +18,7 @@
 #define Weakify(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 //引导页的张数
 #define GuideCount 4
+//webview的隐藏文字
+#define Support @"zhouyy工作室"
 
 #endif /* Key_h */

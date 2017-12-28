@@ -18,6 +18,7 @@
 #import "WRNavigationBar.h"//导航渐变
 #import "UIView+HRExtention.h"
 #import "MBProgressHUD+YFHud.h"//提示
+#import <JavaScriptCore/JavaScriptCore.h>//UIWebView和H5进行交互
 #import <SDCycleScrollView/SDCycleScrollView.h>//轮播
 
 
