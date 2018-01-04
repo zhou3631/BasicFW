@@ -8,9 +8,10 @@
 
 #import "WKWebViewVC.h"
 #import <WebKit/WebKit.h>
+#import "WebViewJavascriptBridge.h"
 
 
-@interface WKWebViewVC ()<UIWebViewDelegate,UIActionSheetDelegate,WKNavigationDelegate,WKUIDelegate,UIScrollViewDelegate>
+@interface WKWebViewVC ()<UIWebViewDelegate,UIActionSheetDelegate,WKNavigationDelegate,WKUIDelegate,UIScrollViewDelegate, WKScriptMessageHandler>
 /** 进度条 */
 @property (nonatomic, strong) UIProgressView *progressView;
 /** WKWebView */
@@ -18,6 +19,8 @@
 /** 网页提供方 */
 @property (nonatomic, strong) UILabel *supportLabel;
 @property (nonatomic, assign) NSUInteger loadCount;
+/** H5交互 **/
+@property WebViewJavascriptBridge* bridge;
 
 
 @end
@@ -30,16 +33,25 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;//防止延展到导航和控制器下面
     self.supportLabel.hidden = NO;
     self.progressView.hidden = NO;
+    
     [self.view insertSubview:self.wkWebView belowSubview:self.progressView];
     [self loadWebView];//加载链接
     [self configBackItem];//返回按钮
-    
+    //右边导航按钮
+    UIButton *rightBtn = [Factory addRightbottonToVC:self andrightStr:@"OC传给JS"];
+    [rightBtn addTarget:self action:@selector(rightBtn:) forControlEvents:UIControlEventTouchUpInside];
     
 }
-
+//右边导航按钮
+- (void)rightBtn:(UIButton *)sender{
+    NSString *scriptString = [NSString stringWithFormat:@"%@('%@')",@"setValue",@"123456789"];
+    [self.wkWebView evaluateJavaScript:scriptString completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+        NSLog(@"obj--%@",object);
+    }];
+}
 #pragma mark -wkWebView
 - (WKWebView *)wkWebView{
-
+    [self interactionWithH5];
     if (!_wkWebView) {
 //        //屏幕适配
 //        NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
@@ -61,6 +73,7 @@
         _wkWebView.navigationDelegate = self;
         _wkWebView.UIDelegate = self;
         _wkWebView.scrollView.delegate = self;
+        
 
     }
     return _wkWebView;
@@ -80,7 +93,9 @@
     [_wkWebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 
     if (self.HTMLString != nil) {//本地HTML
-        [_wkWebView loadHTMLString:self.HTMLString baseURL:nil];
+        NSURL *path = [[NSBundle mainBundle] URLForResource:@"WKWebViewText" withExtension:@"html"];
+        [_wkWebView loadRequest:[NSURLRequest requestWithURL:path]];
+//        [_wkWebView loadHTMLString:self.HTMLString baseURL:nil];
     }else{//加载链接
         NSString *encodeStr=[_urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:encodeStr]];
@@ -93,6 +108,27 @@
         }
         [_wkWebView loadRequest:request];
     }
+}
+
+/**
+ 和H5进行交互
+ */
+- (void)interactionWithH5{
+    WKWebViewConfiguration *config = [WKWebViewConfiguration new];
+    //初始化偏好设置属性：preferences
+    config.preferences = [WKPreferences new];
+    //The minimum font size in points default is 0;
+    config.preferences.minimumFontSize = 10;
+    //是否支持JavaScript
+    config.preferences.javaScriptEnabled = YES;
+    //不通过用户交互，是否可以打开窗口
+    config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
+    //通过JS与webView内容交互
+    config.userContentController = [WKUserContentController new];
+    
+    //注入JS对象名称senderModel，当JS通过senderModel来调用时，我们可以在WKScriptMessageHandler代理中接收到
+    [config.userContentController addScriptMessageHandler:self name:@"senderModel"];
+    
 }
 #pragma mark - ***** 导航栏的反回按钮
 - (void)configBackItem{
@@ -179,35 +215,58 @@
     //        NSLog(@"html 的高度：%f", height);
 }
 #pragma mark 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error
-{
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     // 类似 UIWebView 的- webView:didFailLoadWithError:
     NSLog(@"didFailProvisionalNavigation");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 /*! 页面跳转的代理方法有三种，分为（收到跳转与决定是否跳转两种）*/
 #pragma mark 接收到服务器跳转请求之后调用
-- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation
-{
-    
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"重定向");
 }
 #pragma mark 在收到响应后，决定是否跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler
-{
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
 #pragma mark 在发送请求之前，决定是否跳转，如果不添加这个，那么wkwebview跳转不了AppStore
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
-{
-    if ([webView.URL.absoluteString hasPrefix:@"https://itunes.apple.com"])
-    {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
-        decisionHandler(WKNavigationActionPolicyCancel);
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+//    if ([webView.URL.absoluteString hasPrefix:@"http://www.baidu.com"])
+//    {
+//        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+//        decisionHandler(WKNavigationActionPolicyCancel);
+//    }
+//    else
+//    {
+//        decisionHandler(WKNavigationActionPolicyAllow);
+//    }
+    if(webView == self.wkWebView) {
+        NSURL *URL = navigationAction.request.URL;
+        ///加载失败
+        NSError *error = nil;
+        NSHTTPURLResponse *response = nil;
+        [NSURLConnection sendSynchronousRequest:navigationAction.request returningResponse:&response error:&error];
+        ///加载的本地URL(加载本地url的时候成功是不会出现statusCode状态)
+        if (([response.URL.absoluteString rangeOfString:@"file:"].location == NSNotFound) && ([response.URL.absoluteString rangeOfString:@"about:blank"].location == NSNotFound) && response.statusCode != 200) {
+            //状态码不是200就是失败  空白页面不算失败
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return ;
+        }
+        
+        if(![self externalAppRequiredToOpenURL:URL]) {
+            if(!navigationAction.targetFrame) {
+                //表示webview新开启一个页面
+                [_wkWebView loadRequest:[NSURLRequest requestWithURL:URL]];
+                decisionHandler(WKNavigationActionPolicyCancel);
+                return;
+            }
+        }else if([[UIApplication sharedApplication] canOpenURL:URL]) {
+            [_wkWebView loadRequest:[NSURLRequest requestWithURL:URL]];
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return;
+        }
     }
-    else
-    {
-        decisionHandler(WKNavigationActionPolicyAllow);
-    }
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 #pragma mark 针对于web界面的三种提示框（警告框、确认框、输入框）分别对应三种代理方法。下面只举了警告框的例子。
 /**
@@ -220,8 +279,8 @@
  */
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler
 {
+    NSLog(@"000----%@",message);
     //  js 里面的alert实现，如果不实现，网页的alert函数无效  ,
-    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:message
                                                                              message:nil
                                                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -252,6 +311,9 @@
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+    
+    NSLog(@"9999----%@",message);
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler();
@@ -260,6 +322,7 @@
 }
 #pragma mark 从web界面中接收到一个脚本时调用
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    NSLog(@"message:----%@",message);
     
 }
 #pragma mark - ***** UIWebViewDelegate
@@ -322,19 +385,32 @@
     return _supportLabel;
 }
 #pragma mark 创建一个新的WebView
-//- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
-//{
-//    // 接口的作用是打开新窗口委托
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
+{
+    // 接口的作用是打开新窗口委托
 //    [self createNewWebViewWithURL:webView.URL.absoluteString config:configuration];
 //    return _wkWebView2;
-//}
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
+}
 //
 //- (void)createNewWebViewWithURL:(NSString *)url config:(WKWebViewConfiguration *)configuration
 //{
 //    _wkWebView2 = [[WKWebView alloc] initWithFrame:self.wkWebView.frame configuration:configuration];
 //    [_wkWebView2 loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
 //}
-
+#pragma mark - External App Support
+- (BOOL)externalAppRequiredToOpenURL:(NSURL *)URL {
+    /*
+     若需要限制只允许某些前缀的scheme通过请求，则取消下述注释，并在数组内添加自己需要放行的前缀
+     NSSet *validSchemes = [NSSet setWithArray:@[@"http", @"https",@"file"]];
+     return ![validSchemes containsObject:URL.scheme];
+     */
+    
+    return !URL;
+}
 #pragma mark - ***** dealloc 取消监听
 - (void)dealloc{
     [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];

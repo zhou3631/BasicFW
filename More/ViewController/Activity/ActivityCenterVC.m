@@ -27,9 +27,28 @@
     self.supportLabel.hidden = NO;
     self.progressView.hidden = NO;
     [self.view insertSubview:self.webView belowSubview:_progressView];
-    [self loadWebView];
+//    [self loadWebView];
+    [self locahost];//本地URL
     [self configBackItem];//返回按钮
+    //右边导航按钮
+    UIButton *rightBtn = [Factory addRightbottonToVC:self andrightStr:@"OC传给JS"];
+    [rightBtn addTarget:self action:@selector(rightBtn:) forControlEvents:UIControlEventTouchUpInside];
     
+}
+//右边导航按钮
+- (void)rightBtn:(UIButton *)sender{
+    //网页加载完成之后调用JS代码才会执行，因为这个时候html页面已经注入到webView中并且可以响应到对应方法
+    
+    [self.webView stringByEvaluatingJavaScriptFromString:@"alertMobile()"];
+    
+    
+//    if (sender.tag == 234) {
+//        [self.webView stringByEvaluatingJavaScriptFromString:@"alertName('小红')"];
+//    }
+//
+//    if (sender.tag == 345) {
+//        [self.webView stringByEvaluatingJavaScriptFromString:@"alertSendMsg('18870707070','周末爬山真是件愉快的事情')"];
+//    }
 }
 
 #pragma mark -webView
@@ -68,6 +87,7 @@
 //    _webView.scrollView.maximumZoomScale = rw;
 //    _webView.scrollView.zoomScale = rw;
 //}
+
 /**
  根据返回的URL或者scheme来判断
  */
@@ -92,13 +112,84 @@
     ////            [webView loadRequest:request];
     //            return NO;
     //        }
+    //OC调用JS是基于协议拦截实现的 下面是相关操作
+//    NSString *absolutePath = request.URL.absoluteString;
+    
+    NSString *scheme = @"rrcc://";
+    
+    if ([url hasPrefix:scheme]) {
+        NSString *subPath = [url substringFromIndex:scheme.length];
+        
+        if ([subPath containsString:@"?"]) {//1个或多个参数
+            
+            if ([subPath containsString:@"&"]) {//多个参数
+                NSArray *components = [subPath componentsSeparatedByString:@"?"];
+                
+                NSString *methodName = [components firstObject];
+                
+                methodName = [methodName stringByReplacingOccurrencesOfString:@"_" withString:@":"];
+//                SEL sel = NSSelectorFromString(methodName);
+                
+                NSString *parameter = [components lastObject];
+                NSArray *params = [parameter componentsSeparatedByString:@"&"];
+                
+                if (params.count == 2) {
+//                    if ([self respondsToSelector:sel]) {
+                        //                        [self performSelector:sel withObject:[params firstObject] withObject:[params lastObject]];
+                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[params firstObject]
+                                                                                                 message:[params lastObject]
+                                                                                          preferredStyle:UIAlertControllerStyleAlert];
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"确定"
+                                                                            style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction *action) {
+                                                                              
+                                                                          }]];
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"取消"
+                                                                            style:UIAlertActionStyleCancel
+                                                                          handler:^(UIAlertAction *action){
+                                                                              
+                                                                          }]];
+                        
+                        [self presentViewController:alertController animated:YES completion:^{}];
+                    }
+//                }
+                
+                
+            } else {//1个参数
+                NSArray *components = [subPath componentsSeparatedByString:@"?"];
+                
+                NSString *methodName = [components firstObject];
+                methodName = [methodName stringByReplacingOccurrencesOfString:@"_" withString:@":"];
+                SEL sel = NSSelectorFromString(methodName);
+                
+                //                NSString *parameter = [components lastObject];
+                
+                if ([self respondsToSelector:sel]) {
+                    //                    [self performSelector:sel withObject:parameter];
+                }
+                
+            }
+            
+        } else {//没有参数
+            NSString *methodName = [subPath stringByReplacingOccurrencesOfString:@"_" withString:@":"];
+            SEL sel = NSSelectorFromString(methodName);
+            
+            if ([self respondsToSelector:sel]) {
+                //                [self performSelector:sel];
+            }
+        }
+    }
     
     return YES;
 }
+//本地URL
+- (void)locahost{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSURL *baseURL = [[NSBundle mainBundle] bundleURL];
+    [self.webView loadHTMLString:[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil] baseURL:baseURL];
+}
 //请求webView
-- (void)loadWebView
-{
-    
+- (void)loadWebView{
     
     NSString *encodeStr=[_urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:encodeStr]];

@@ -20,5 +20,15 @@
     vc.navigationItem.leftBarButtonItem = leftBarButton;
     return button;
 }
+//右边的文字按钮
++ (UIButton *)addRightbottonToVC:(UIViewController *)vc andrightStr:(NSString *)rightStr{
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 40)];
+    [button setTitle:rightStr forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:0];
+    button.titleLabel.font = [UIFont systemFontOfSize:30 * m6Scale];
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithCustomView:button];
+    vc.navigationItem.rightBarButtonItem = rightBarButton;
+    return button;
+}
 
 @end

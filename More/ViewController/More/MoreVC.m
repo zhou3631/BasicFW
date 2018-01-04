@@ -59,7 +59,8 @@ static NSString *cellStr = @"FW";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    WKWebViewVC *headerVC = [WKWebViewVC new];
     ActivityCenterVC *headerVC = [ActivityCenterVC new];
-    headerVC.urlString = @"https://www.baidu.com";
+//    headerVC.urlString = @"https://www.baidu.com";
+//    headerVC.HTMLString = @"1";
     [self.navigationController pushViewController:headerVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

@@ -10,9 +10,10 @@
 
 @interface Factory : NSObject
 
-/**
- 左边的按钮
- */
+/** 左边的按钮 */
 + (UIButton *)addLeftbottonToVC:(UIViewController *)vc;
+/** 右边的文字按钮 */
++ (UIButton *)addRightbottonToVC:(UIViewController *)vc andrightStr:(NSString *)rightStr;
+
 
 @end

@@ -13,6 +13,7 @@ pod 'AFNetworking', '~> 3.1.0'
 pod 'SDWebImage', '~> 4.2.2'
 pod 'SDWebImage/GIF'   #SDWebImage4.0以后的版本gif依赖了FLAnimatedImage
 pod 'SDCycleScrollView', '~> 1.75'#轮播图
+pod 'WebViewJavascriptBridge', '~> 6.0.3'#wkwebview与H5进行交互
 
 
 
