@@ -17,6 +17,8 @@
 		840F57A51FF0FBA000A0AC85 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F57A41FF0FBA000A0AC85 /* Factory.m */; };
 		8414E85E1FDE71EC0026D3AD /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8414E85C1FDE71EC0026D3AD /* BaseNavigationController.m */; };
 		8414E85F1FDE71EC0026D3AD /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8414E85D1FDE71EC0026D3AD /* MainTabBarController.m */; };
+		8416DF251FFF19480018452E /* ShufflingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416DF241FFF19480018452E /* ShufflingVC.m */; };
+		8416DF291FFF4F000018452E /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416DF271FFF4F000018452E /* SGAdvertScrollView.m */; };
 		841B3B841FDA39940059E924 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B3B831FDA39940059E924 /* AppDelegate.m */; };
 		841B3B871FDA39940059E924 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B3B861FDA39940059E924 /* ViewController.m */; };
 		841B3B8A1FDA39940059E924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B3B881FDA39940059E924 /* Main.storyboard */; };
@@ -103,6 +105,10 @@
 		8414E85B1FDE71EB0026D3AD /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		8414E85C1FDE71EC0026D3AD /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		8414E85D1FDE71EC0026D3AD /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		8416DF231FFF19480018452E /* ShufflingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShufflingVC.h; sourceTree = "<group>"; };
+		8416DF241FFF19480018452E /* ShufflingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShufflingVC.m; sourceTree = "<group>"; };
+		8416DF271FFF4F000018452E /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
+		8416DF281FFF4F000018452E /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
 		841B3B7F1FDA39940059E924 /* BasicFW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicFW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841B3B821FDA39940059E924 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		841B3B831FDA39940059E924 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -281,6 +287,7 @@
 		8414E8581FDE64CE0026D3AD /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				8416DF261FFF4F000018452E /* SGAdvertScrollView */,
 				840E23391FEB8DED002CD7B0 /* Class */,
 				841E3B961FEA0D82000621C0 /* NavBar */,
 				84B731BF1FE3C1970081BDC7 /* Other */,
@@ -301,6 +308,15 @@
 				8414E85D1FDE71EC0026D3AD /* MainTabBarController.m */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8416DF261FFF4F000018452E /* SGAdvertScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8416DF281FFF4F000018452E /* SGAdvertScrollView.h */,
+				8416DF271FFF4F000018452E /* SGAdvertScrollView.m */,
+			);
+			path = SGAdvertScrollView;
 			sourceTree = "<group>";
 		};
 		841B3B761FDA39940059E924 = {
@@ -690,6 +706,8 @@
 			children = (
 				847BCD261FDFD3DF009A43A7 /* MoreVC.h */,
 				847BCD271FDFD3DF009A43A7 /* MoreVC.m */,
+				8416DF231FFF19480018452E /* ShufflingVC.h */,
+				8416DF241FFF19480018452E /* ShufflingVC.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1046,9 +1064,11 @@
 				840F57A11FF0E07800A0AC85 /* TitleLabelStyle.m in Sources */,
 				841E3B9F1FEA0DBD000621C0 /* WRImageHelper.m in Sources */,
 				8414E85F1FDE71EC0026D3AD /* MainTabBarController.m in Sources */,
+				8416DF251FFF19480018452E /* ShufflingVC.m in Sources */,
 				84B731C21FE3C1A20081BDC7 /* NullSafe.m in Sources */,
 				841B3B871FDA39940059E924 /* ViewController.m in Sources */,
 				840E233D1FEB8DF7002CD7B0 /* FatherVC.m in Sources */,
+				8416DF291FFF4F000018452E /* SGAdvertScrollView.m in Sources */,
 				841B3B921FDA39940059E924 /* main.m in Sources */,
 				841E3BA11FEA0DBD000621C0 /* WRCustomNavigationBar.m in Sources */,
 				847BCD141FDFD2D1009A43A7 /* PersonalVC.m in Sources */,

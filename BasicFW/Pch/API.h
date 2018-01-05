@@ -17,6 +17,7 @@
 #import "TitleLabelStyle.h"//导航上字体的颜色
 #import "WRNavigationBar.h"//导航渐变
 #import "UIView+HRExtention.h"
+#import "SGAdvertScrollView.h"//上下轮播
 #import "MBProgressHUD+YFHud.h"//提示
 #import <JavaScriptCore/JavaScriptCore.h>//UIWebView和H5进行交互
 #import <SDCycleScrollView/SDCycleScrollView.h>//轮播

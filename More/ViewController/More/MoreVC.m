@@ -8,6 +8,7 @@
 
 #import "MoreVC.h"
 #import "WKWebViewVC.h"
+#import "ShufflingVC.h"
 #import "ActivityCenterVC.h"
 
 
@@ -57,11 +58,16 @@ static NSString *cellStr = @"FW";
 #pragma mark -didSelectRowAtIndexPath
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    WKWebViewVC *headerVC = [WKWebViewVC new];
-    ActivityCenterVC *headerVC = [ActivityCenterVC new];
-//    headerVC.urlString = @"https://www.baidu.com";
-//    headerVC.HTMLString = @"1";
-    [self.navigationController pushViewController:headerVC animated:YES];
+    if (indexPath.row == 2) {
+        ShufflingVC *shuff = [ShufflingVC new];
+        [self.navigationController pushViewController:shuff animated:YES];
+    }else{
+        //    WKWebViewVC *headerVC = [WKWebViewVC new];
+        ActivityCenterVC *headerVC = [ActivityCenterVC new];
+        //    headerVC.urlString = @"https://www.baidu.com";
+        //    headerVC.HTMLString = @"1";
+        [self.navigationController pushViewController:headerVC animated:YES];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
