@@ -43,7 +43,7 @@ static NSString *cellStr = @"FW";
 }
 #pragma mark -numberOfRowsInSection
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 4;
 }
 #pragma mark -cellForRowAtIndexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,7 +51,7 @@ static NSString *cellStr = @"FW";
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
     }
-    NSArray *array = @[@"UIWebView",@"WkWebView",@"其它"];
+    NSArray *array = @[@"UIWebView",@"WkWebView",@"其它",@"打电话功能"];
     cell.textLabel.text = array[indexPath.row];
     return cell;
 }
@@ -61,6 +61,30 @@ static NSString *cellStr = @"FW";
     if (indexPath.row == 2) {
         ShufflingVC *shuff = [ShufflingVC new];
         [self.navigationController pushViewController:shuff animated:YES];
+    }else if (indexPath.row == 3){
+        NSString *clip = @"客服时间:9:00-17:30\n400-0571-909";
+        //客服电话
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"客服电话" message:clip preferredStyle:UIAlertControllerStyleAlert];
+        NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:clip];
+        [attStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:36 * m6Scale] range:NSMakeRange(clip.length - 12, 12)];
+        [attStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:26 * m6Scale] range:NSMakeRange(0, clip.length - 12)];
+        //        if ([alert valueForKey:@"attributedMessage"]) {
+        
+        [alert setValue:attStr forKey:@"attributedMessage"];
+        //        }
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"呼叫" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            NSString *str = @"tel://400-0571-909";
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }else{
         //    WKWebViewVC *headerVC = [WKWebViewVC new];
         ActivityCenterVC *headerVC = [ActivityCenterVC new];
