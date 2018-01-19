@@ -9,6 +9,7 @@
 #import "MoreVC.h"
 #import "WKWebViewVC.h"
 #import "ShufflingVC.h"
+#import "GesturesVC.h"
 #import "ActivityCenterVC.h"
 
 
@@ -27,7 +28,16 @@ static NSString *cellStr = @"FW";
     [super viewDidLoad];
     self.view.backgroundColor = BackGroundColor;
     [self.view addSubview:self.tableView];
-    
+    //监听网络
+    [YFNetManager noticeNetworkStatusBlock:^(NetWorkStatus status) {
+        NSLog(@"status===%lu",(unsigned long)status);
+        [TopAlertManager showAlertWithType:TopAlertTypeMessage title:@"网络有变化了！"];
+    }];
+    NSMutableDictionary *mudic = [NSMutableDictionary dictionary];
+    [mudic setValue:@"aaaa" forKey:@"cloue"];
+    [ApiManager postProvinceInfo:^(id obj, NSError *error) {
+        
+    } muDic:mudic];
 }
 #pragma mark -tableView
 - (UITableView *)tableView{
@@ -43,7 +53,7 @@ static NSString *cellStr = @"FW";
 }
 #pragma mark -numberOfRowsInSection
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 6;
 }
 #pragma mark -cellForRowAtIndexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,7 +61,7 @@ static NSString *cellStr = @"FW";
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
     }
-    NSArray *array = @[@"UIWebView",@"WkWebView",@"其它",@"打电话功能"];
+    NSArray *array = @[@"UIWebView",@"WkWebView",@"其它",@"打电话功能",@"手势密码",@"指纹密码"];
     cell.textLabel.text = array[indexPath.row];
     return cell;
 }
@@ -85,6 +95,11 @@ static NSString *cellStr = @"FW";
         }]];
         
         [self presentViewController:alert animated:YES completion:nil];
+    }else if (indexPath.row == 4){
+        GesturesVC *gestures = [GesturesVC new];
+        [self.navigationController pushViewController:gestures animated:YES];
+    }else if (indexPath.row == 5){
+        
     }else{
         //    WKWebViewVC *headerVC = [WKWebViewVC new];
         ActivityCenterVC *headerVC = [ActivityCenterVC new];

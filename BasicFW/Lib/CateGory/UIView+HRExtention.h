@@ -18,5 +18,7 @@
 
 @property (nonatomic, assign) CGFloat height;
 
+@property(nonatomic, assign) CGFloat centerX;
+
 
 @end
