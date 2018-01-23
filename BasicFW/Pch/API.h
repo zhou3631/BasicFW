@@ -25,6 +25,7 @@
 #import "UIView+ViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>//UIWebView和H5进行交互
 #import <SDCycleScrollView/SDCycleScrollView.h>//轮播
+#import <LocalAuthentication/LocalAuthentication.h>//指纹设置
 
 
 

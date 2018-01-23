@@ -10,7 +10,9 @@
 #import "WKWebViewVC.h"
 #import "ShufflingVC.h"
 #import "GesturesVC.h"
+#import "FingerprintVC.h"
 #import "ActivityCenterVC.h"
+
 
 
 
@@ -95,11 +97,12 @@ static NSString *cellStr = @"FW";
         }]];
         
         [self presentViewController:alert animated:YES completion:nil];
-    }else if (indexPath.row == 4){
+    }else if (indexPath.row == 4){//手势密码
         GesturesVC *gestures = [GesturesVC new];
         [self.navigationController pushViewController:gestures animated:YES];
-    }else if (indexPath.row == 5){
-        
+    }else if (indexPath.row == 5){//指纹密码    
+        FingerprintVC *finger = [FingerprintVC new];
+        [self.navigationController pushViewController:finger animated:YES];
     }else{
         //    WKWebViewVC *headerVC = [WKWebViewVC new];
         ActivityCenterVC *headerVC = [ActivityCenterVC new];

@@ -50,6 +50,7 @@
 		844849C71FE0CE7000F19087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844849C61FE0CE7000F19087 /* Assets.xcassets */; };
 		844940FE1FF2354300596F37 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844940FD1FF2354300596F37 /* JavaScriptCore.framework */; };
 		844941011FF238CB00596F37 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844941001FF238CB00596F37 /* WKWebViewVC.m */; };
+		8459A49D20157ABF00EB04AB /* FingerprintVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459A49C20157ABF00EB04AB /* FingerprintVC.m */; };
 		846417C41FF644F60088C195 /* WKWebViewText.html in Resources */ = {isa = PBXBuildFile; fileRef = 846417C31FF644F60088C195 /* WKWebViewText.html */; };
 		846B62671FECD7A600826FA9 /* UpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B62661FECD7A600826FA9 /* UpdateApp.m */; };
 		847BCCE31FDF6D67009A43A7 /* MBProgressHUD+YFHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */; };
@@ -173,6 +174,8 @@
 		844940FD1FF2354300596F37 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		844940FF1FF238CB00596F37 /* WKWebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewVC.h; sourceTree = "<group>"; };
 		844941001FF238CB00596F37 /* WKWebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewVC.m; sourceTree = "<group>"; };
+		8459A49B20157ABF00EB04AB /* FingerprintVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerprintVC.h; sourceTree = "<group>"; };
+		8459A49C20157ABF00EB04AB /* FingerprintVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerprintVC.m; sourceTree = "<group>"; };
 		846417C31FF644F60088C195 /* WKWebViewText.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKWebViewText.html; sourceTree = "<group>"; };
 		846B62651FECD7A600826FA9 /* UpdateApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateApp.h; sourceTree = "<group>"; };
 		846B62661FECD7A600826FA9 /* UpdateApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateApp.m; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 			children = (
 				84167EBA200F43BC006FC8AF /* GesturesVC.h */,
 				84167EBB200F43BC006FC8AF /* GesturesVC.m */,
+				8459A49B20157ABF00EB04AB /* FingerprintVC.h */,
+				8459A49C20157ABF00EB04AB /* FingerprintVC.m */,
 			);
 			path = Gestures;
 			sourceTree = "<group>";
@@ -1160,6 +1165,7 @@
 				84167EBC200F43BC006FC8AF /* GesturesVC.m in Sources */,
 				844941011FF238CB00596F37 /* WKWebViewVC.m in Sources */,
 				8415AD062004AE020057D8BA /* UIView+ViewController.m in Sources */,
+				8459A49D20157ABF00EB04AB /* FingerprintVC.m in Sources */,
 				841A0355200D95AF00870A2A /* YFNetManager.m in Sources */,
 				840F57A11FF0E07800A0AC85 /* TitleLabelStyle.m in Sources */,
 				841A0360200D95D300870A2A /* TopAlertManager.m in Sources */,
