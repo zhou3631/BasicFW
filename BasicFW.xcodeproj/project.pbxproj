@@ -22,6 +22,7 @@
 		84167EBC200F43BC006FC8AF /* GesturesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84167EBB200F43BC006FC8AF /* GesturesVC.m */; };
 		8416DF251FFF19480018452E /* ShufflingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416DF241FFF19480018452E /* ShufflingVC.m */; };
 		8416DF291FFF4F000018452E /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416DF271FFF4F000018452E /* SGAdvertScrollView.m */; };
+		84184EAF20187BD900EC0BB7 /* RedDotLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 84184EAE20187BD900EC0BB7 /* RedDotLab.m */; };
 		841A0354200D95AF00870A2A /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A034E200D95AF00870A2A /* AFAppDotNetAPIClient.m */; };
 		841A0355200D95AF00870A2A /* YFNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A034F200D95AF00870A2A /* YFNetManager.m */; };
 		841A0356200D95AF00870A2A /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A0352200D95AF00870A2A /* ApiManager.m */; };
@@ -53,6 +54,9 @@
 		8459A49D20157ABF00EB04AB /* FingerprintVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459A49C20157ABF00EB04AB /* FingerprintVC.m */; };
 		846417C41FF644F60088C195 /* WKWebViewText.html in Resources */ = {isa = PBXBuildFile; fileRef = 846417C31FF644F60088C195 /* WKWebViewText.html */; };
 		846B62671FECD7A600826FA9 /* UpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B62661FECD7A600826FA9 /* UpdateApp.m */; };
+		84776DF12019846300D1E89E /* UIView+RedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 84776DF02019846300D1E89E /* UIView+RedDot.m */; };
+		84776DF42019B7C100D1E89E /* UITabBarItem+RedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 84776DF32019B7C100D1E89E /* UITabBarItem+RedDot.m */; };
+		84776DF72019CA2900D1E89E /* RedDotVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84776DF62019CA2900D1E89E /* RedDotVC.m */; };
 		847BCCE31FDF6D67009A43A7 /* MBProgressHUD+YFHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */; };
 		847BCCE41FDF6D67009A43A7 /* UIBarButtonItem+YFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCE11FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.m */; };
 		847BCCEE1FDFB61D009A43A7 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BCCED1FDFB61D009A43A7 /* HomeVC.m */; };
@@ -128,6 +132,8 @@
 		8416DF241FFF19480018452E /* ShufflingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShufflingVC.m; sourceTree = "<group>"; };
 		8416DF271FFF4F000018452E /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
 		8416DF281FFF4F000018452E /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
+		84184EAD20187BD900EC0BB7 /* RedDotLab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedDotLab.h; sourceTree = "<group>"; };
+		84184EAE20187BD900EC0BB7 /* RedDotLab.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedDotLab.m; sourceTree = "<group>"; };
 		841A034E200D95AF00870A2A /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
 		841A034F200D95AF00870A2A /* YFNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFNetManager.m; sourceTree = "<group>"; };
 		841A0350200D95AF00870A2A /* ApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
@@ -179,6 +185,12 @@
 		846417C31FF644F60088C195 /* WKWebViewText.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKWebViewText.html; sourceTree = "<group>"; };
 		846B62651FECD7A600826FA9 /* UpdateApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateApp.h; sourceTree = "<group>"; };
 		846B62661FECD7A600826FA9 /* UpdateApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateApp.m; sourceTree = "<group>"; };
+		84776DEF2019846300D1E89E /* UIView+RedDot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RedDot.h"; sourceTree = "<group>"; };
+		84776DF02019846300D1E89E /* UIView+RedDot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RedDot.m"; sourceTree = "<group>"; };
+		84776DF22019B7C100D1E89E /* UITabBarItem+RedDot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+RedDot.h"; sourceTree = "<group>"; };
+		84776DF32019B7C100D1E89E /* UITabBarItem+RedDot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+RedDot.m"; sourceTree = "<group>"; };
+		84776DF52019CA2900D1E89E /* RedDotVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedDotVC.h; sourceTree = "<group>"; };
+		84776DF62019CA2900D1E89E /* RedDotVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedDotVC.m; sourceTree = "<group>"; };
 		847BCCDF1FDF6D66009A43A7 /* MBProgressHUD+YFHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+YFHud.m"; sourceTree = "<group>"; };
 		847BCCE01FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YFExtension.h"; sourceTree = "<group>"; };
 		847BCCE11FDF6D66009A43A7 /* UIBarButtonItem+YFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YFExtension.m"; sourceTree = "<group>"; };
@@ -378,6 +390,21 @@
 				8416DF271FFF4F000018452E /* SGAdvertScrollView.m */,
 			);
 			path = SGAdvertScrollView;
+			sourceTree = "<group>";
+		};
+		84184EAC2018798200EC0BB7 /* RedDot */ = {
+			isa = PBXGroup;
+			children = (
+				84184EAD20187BD900EC0BB7 /* RedDotLab.h */,
+				84184EAE20187BD900EC0BB7 /* RedDotLab.m */,
+				84776DEF2019846300D1E89E /* UIView+RedDot.h */,
+				84776DF02019846300D1E89E /* UIView+RedDot.m */,
+				84776DF22019B7C100D1E89E /* UITabBarItem+RedDot.h */,
+				84776DF32019B7C100D1E89E /* UITabBarItem+RedDot.m */,
+				84776DF52019CA2900D1E89E /* RedDotVC.h */,
+				84776DF62019CA2900D1E89E /* RedDotVC.m */,
+			);
+			path = RedDot;
 			sourceTree = "<group>";
 		};
 		841A034D200D95AF00870A2A /* NewWork */ = {
@@ -776,6 +803,7 @@
 		847BCD1C1FDFD365009A43A7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84184EAC2018798200EC0BB7 /* RedDot */,
 				84167EB9200F4154006FC8AF /* Gestures */,
 				840F579A1FF0A49C00A0AC85 /* Activity */,
 				847BCD251FDFD3CC009A43A7 /* More */,
@@ -1161,6 +1189,7 @@
 				847BCD2C1FDFD3F9009A43A7 /* MoreModel.m in Sources */,
 				847BCD021FDFCF95009A43A7 /* ItemListVC.m in Sources */,
 				847BCD301FDFD41A009A43A7 /* MoreView.m in Sources */,
+				84776DF42019B7C100D1E89E /* UITabBarItem+RedDot.m in Sources */,
 				847BCCE41FDF6D67009A43A7 /* UIBarButtonItem+YFExtension.m in Sources */,
 				84167EBC200F43BC006FC8AF /* GesturesVC.m in Sources */,
 				844941011FF238CB00596F37 /* WKWebViewVC.m in Sources */,
@@ -1180,12 +1209,15 @@
 				841E3BA11FEA0DBD000621C0 /* WRCustomNavigationBar.m in Sources */,
 				841A0356200D95AF00870A2A /* ApiManager.m in Sources */,
 				847BCD141FDFD2D1009A43A7 /* PersonalVC.m in Sources */,
+				84184EAF20187BD900EC0BB7 /* RedDotLab.m in Sources */,
+				84776DF72019CA2900D1E89E /* RedDotVC.m in Sources */,
 				840E23381FEB8A8F002CD7B0 /* TestVC.m in Sources */,
 				847BCD061FDFCFB6009A43A7 /* ItemModel.m in Sources */,
 				84B731C51FE3D2770081BDC7 /* GuidePageVC.m in Sources */,
 				840F579D1FF0A57200A0AC85 /* ActivityCenterVC.m in Sources */,
 				847BCD1A1FDFD2F6009A43A7 /* PersonalView.m in Sources */,
 				8413DF892010455800A14220 /* LockView.m in Sources */,
+				84776DF12019846300D1E89E /* UIView+RedDot.m in Sources */,
 				841E3BA01FEA0DBD000621C0 /* WRNavigationBar.m in Sources */,
 				840E23431FEBB68E002CD7B0 /* HeaderImageVC.m in Sources */,
 				847BCCEE1FDFB61D009A43A7 /* HomeVC.m in Sources */,

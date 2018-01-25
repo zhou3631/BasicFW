@@ -10,6 +10,7 @@
 #import "WKWebViewVC.h"
 #import "ShufflingVC.h"
 #import "GesturesVC.h"
+#import "RedDotVC.h"
 #import "FingerprintVC.h"
 #import "ActivityCenterVC.h"
 
@@ -55,7 +56,7 @@ static NSString *cellStr = @"FW";
 }
 #pragma mark -numberOfRowsInSection
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    return 7;
 }
 #pragma mark -cellForRowAtIndexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -63,7 +64,7 @@ static NSString *cellStr = @"FW";
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
     }
-    NSArray *array = @[@"UIWebView",@"WkWebView",@"其它",@"打电话功能",@"手势密码",@"指纹密码"];
+    NSArray *array = @[@"UIWebView",@"WkWebView",@"其它",@"打电话功能",@"手势密码",@"指纹密码",@"小红点"];
     cell.textLabel.text = array[indexPath.row];
     return cell;
 }
@@ -103,6 +104,9 @@ static NSString *cellStr = @"FW";
     }else if (indexPath.row == 5){//指纹密码    
         FingerprintVC *finger = [FingerprintVC new];
         [self.navigationController pushViewController:finger animated:YES];
+    }else if (indexPath.row == 6){//小红点
+        RedDotVC *reddot = [RedDotVC new];
+        [self.navigationController pushViewController:reddot animated:YES];
     }else{
         //    WKWebViewVC *headerVC = [WKWebViewVC new];
         ActivityCenterVC *headerVC = [ActivityCenterVC new];
