@@ -65,6 +65,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:24*m6Scale],NSForegroundColorAttributeName:GrayColor} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:K_TitleColor,NSFontAttributeName:[UIFont systemFontOfSize:24*m6Scale]} forState:UIControlStateSelected];
     viewcontroller.title = title;
+//    viewcontroller.tabBarItem.badgeValue = @"99";//控制栏的红点
     viewcontroller.tabBarItem.image = [UIImage imageNamed:imageName];
     viewcontroller.tabBarItem.selectedImage = [UIImage imageNamed:selectImageName];
 //    [self.itemArray addObject:viewcontroller];

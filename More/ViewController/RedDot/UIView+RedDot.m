@@ -24,7 +24,7 @@ const static  void *badgeLableString = &badgeLableString;
     CGSize textSize=[self sizeWithString:text font:tfont constrainedToWidth:self.frame.size.width];
     //区分是不是button，两种展现形式
     if ([self isKindOfClass:[UIButton class]]) {
-        UIButton *weakButton=(UIButton*)self;
+        UIButton *weakButton = (UIButton*)self;
         [[self badgeLable] makeBrdgeViewWithText:text textColor:tColor backColor:backColor textFont:tfont tframe:CGRectMake(weakButton.imageView.frame.size.width*0.5+weakButton.imageView.frame.origin.x,weakButton.imageView.frame.origin.y, textSize.width+8.0, textSize.height)];
     }else{
         
@@ -34,7 +34,7 @@ const static  void *badgeLableString = &badgeLableString;
 //只是设置圆点
 - (void)makeRedBadge:(CGFloat)corner color:(UIColor *)cornerColor{
     //圆点大小、颜色
-    if ([self badgeLable]==nil) {//如果没有绑定就重新创建,然后绑定
+    if ([self badgeLable] == nil) {//如果没有绑定就重新创建,然后绑定
         RedDotLab *badgeLable = [[RedDotLab alloc] init];
         objc_setAssociatedObject(self, badgeLableString, badgeLable, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self addSubview:badgeLable];
