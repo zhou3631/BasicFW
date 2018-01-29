@@ -23,6 +23,7 @@
 #import "SGAdvertScrollView.h"//上下轮播
 #import "MBProgressHUD+YFHud.h"//提示
 #import "UIView+ViewController.h"
+#import "UIImageView+SDWebImage.h"//SDWebImage
 #import <JavaScriptCore/JavaScriptCore.h>//UIWebView和H5进行交互
 #import <SDCycleScrollView/SDCycleScrollView.h>//轮播
 #import <LocalAuthentication/LocalAuthentication.h>//指纹设置

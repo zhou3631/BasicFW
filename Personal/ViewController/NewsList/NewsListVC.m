@@ -1,17 +1,15 @@
 //
-//  PersonalVC.m
+//  NewsListVC.m
 //  BasicFW
 //
-//  Created by 周玉阳 on 2017/12/12.
-//  Copyright © 2017年 zyy. All rights reserved.
+//  Created by 周玉阳 on 2018/1/29.
+//  Copyright © 2018年 zyy. All rights reserved.
 //
 
-#import "PersonalVC.h"
-#import "HeaderImageVC.h"
 #import "NewsListVC.h"
+#import "NewsListCell.h"
 
-
-@interface PersonalVC ()<UITableViewDataSource, UITableViewDelegate>
+@interface NewsListVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 
 
@@ -19,12 +17,14 @@
 
 static NSString *cellStr = @"FW";
 
-@implementation PersonalVC
+@implementation NewsListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [TitleLabelStyle addtitleViewToVC:self withTitle:@"新闻"];
     self.view.backgroundColor = BackGroundColor;
     [self.view addSubview:self.tableView];
+    
     
 }
 #pragma mark -tableView
@@ -39,33 +39,28 @@ static NSString *cellStr = @"FW";
     }
     return _tableView;
 }
-#pragma mark -numberOfRowsInSection
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 10;
 }
 #pragma mark -cellForRowAtIndexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellStr];
+    
+    NewsListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellStr];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
+        cell = [[NewsListCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
     }
-    NSArray *array = @[@"头像处理",@"版本检测",@"缓存处理",@"新闻列表"];
-    cell.textLabel.text = array[indexPath.row];
+    
     return cell;
 }
 #pragma mark -didSelectRowAtIndexPath
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 3) {//新闻列表
-        NewsListVC *newsList = [NewsListVC new];
-        [self.navigationController pushViewController:newsList animated:YES];
-    }else{
-        HeaderImageVC *headerVC = [HeaderImageVC new];
-        headerVC.typeTag = indexPath.row;
-        [self.navigationController pushViewController:headerVC animated:YES];
-    }
+
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 120*m6Scale;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
