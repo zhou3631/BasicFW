@@ -10,6 +10,7 @@
 #import "HeaderImageVC.h"
 #import "NewsListVC.h"
 #import "FeedBackVC.h"
+#import "AboutVC.h"
 
 
 
@@ -43,7 +44,7 @@ static NSString *cellStr = @"FW";
 }
 #pragma mark -numberOfRowsInSection
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 6;
 }
 #pragma mark -cellForRowAtIndexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,7 +52,7 @@ static NSString *cellStr = @"FW";
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
     }
-    NSArray *array = @[@"头像处理",@"版本检测",@"缓存处理",@"新闻列表",@"意见反馈"];
+    NSArray *array = @[@"头像处理",@"版本检测",@"缓存处理",@"新闻列表",@"意见反馈",@"关于我们"];
     cell.textLabel.text = array[indexPath.row];
     return cell;
 }
@@ -64,6 +65,9 @@ static NSString *cellStr = @"FW";
     }else if (indexPath.row == 4){//意见反馈
         FeedBackVC *feedBack = [FeedBackVC new];
         [self.navigationController pushViewController:feedBack animated:YES];
+    }else if (indexPath.row == 5){//关于我们
+        AboutVC *about = [AboutVC new];
+        [self.navigationController pushViewController:about animated:YES];
     }else{//头像
         HeaderImageVC *headerVC = [HeaderImageVC new];
         headerVC.typeTag = indexPath.row;

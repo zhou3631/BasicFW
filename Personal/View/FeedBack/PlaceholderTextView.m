@@ -38,7 +38,8 @@
  */
 - (void)setPlaceholderFont:(UIFont *)placeholderFont
 {
-    self.PlaceholderLabel.font = self.placeholderFont?self.placeholderFont:[UIFont systemFontOfSize:26*m6Scale];
+    self.PlaceholderLabel.font = self.placeholderFont?self.placeholderFont:[UIFont systemFontOfSize:26
+                                                                            *m6Scale];
 }
 
 - (void)setPlaceholder:(NSString *)placeholder

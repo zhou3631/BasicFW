@@ -35,6 +35,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define navigationColor RGBA(0, 175, 240,1.0)
 //导航上分段选择颜色
 #define SegmentColor RGBA(253, 182, 21,1.0)
+/**
+ tableview分割线的颜色
+ */
+#define SeparatorColor RGBA(227, 226, 226,1.0)
 
 
 

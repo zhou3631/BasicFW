@@ -45,6 +45,7 @@
 		841E3BA31FEA510F000621C0 /* localImg10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E3BA21FEA510F000621C0 /* localImg10.jpg */; };
 		8426B43120215E3F00DC9345 /* FeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426B43020215E3F00DC9345 /* FeedBackVC.m */; };
 		8426B4352021BD6500DC9345 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426B4342021BD6500DC9345 /* PlaceholderTextView.m */; };
+		8426B4382022B8A600DC9345 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426B4372022B8A600DC9345 /* AboutVC.m */; };
 		8445D5461FE8A7610031D59F /* guide3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8445D5421FE8A7610031D59F /* guide3@2x.png */; };
 		8445D5471FE8A7610031D59F /* guide1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8445D5431FE8A7610031D59F /* guide1@2x.png */; };
 		8445D5481FE8A7610031D59F /* guide2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8445D5441FE8A7610031D59F /* guide2@2x.png */; };
@@ -180,6 +181,8 @@
 		8426B43020215E3F00DC9345 /* FeedBackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedBackVC.m; sourceTree = "<group>"; };
 		8426B4332021BD6500DC9345 /* PlaceholderTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
 		8426B4342021BD6500DC9345 /* PlaceholderTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		8426B4362022B8A600DC9345 /* AboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
+		8426B4372022B8A600DC9345 /* AboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		8445D5421FE8A7610031D59F /* guide3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide3@2x.png"; sourceTree = "<group>"; };
 		8445D5431FE8A7610031D59F /* guide1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide1@2x.png"; sourceTree = "<group>"; };
 		8445D5441FE8A7610031D59F /* guide2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide2@2x.png"; sourceTree = "<group>"; };
@@ -807,6 +810,8 @@
 				847BCD131FDFD2D1009A43A7 /* PersonalVC.m */,
 				840E23411FEBB68E002CD7B0 /* HeaderImageVC.h */,
 				840E23421FEBB68E002CD7B0 /* HeaderImageVC.m */,
+				8426B4362022B8A600DC9345 /* AboutVC.h */,
+				8426B4372022B8A600DC9345 /* AboutVC.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -1271,6 +1276,7 @@
 				847BCD141FDFD2D1009A43A7 /* PersonalVC.m in Sources */,
 				84184EAF20187BD900EC0BB7 /* RedDotLab.m in Sources */,
 				84776DF72019CA2900D1E89E /* RedDotVC.m in Sources */,
+				8426B4382022B8A600DC9345 /* AboutVC.m in Sources */,
 				840E23381FEB8A8F002CD7B0 /* TestVC.m in Sources */,
 				847BCD061FDFCFB6009A43A7 /* ItemModel.m in Sources */,
 				84B731C51FE3D2770081BDC7 /* GuidePageVC.m in Sources */,
